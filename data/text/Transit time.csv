@@ -1,0 +1,5 @@
+﻿Lane,Number of shipments,Percentage of time spent within 2km of origin,Percentage of time spent within 10km of origin,Percentage of shipments close to Google ETA 10km geofence,Percentage of shipments close to Google ETA 2km geofence,Google ETA
+KDC To Cardinal-Groveport,179,44.8,45.8,86.6,76.0,3hr 46min
+KDC to McKesson-OliveBranch,190,31.8,32.3,81.6,81.6,6hr 28min
+KDC to ABC-LockBourne,136,58.3,59.0,93.3,88.9,3hr 42min
+KDC to MorrisDickson-Shreveport,37,30.6,34.6,29.7,29.7,10hr 39min

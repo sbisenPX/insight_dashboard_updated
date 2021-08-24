@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>pydeck</title>
+        <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.0/mapbox-gl.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@~8.4.*/dist/index.js'></script>
+    <style>
+    body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#deck-map-container {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+#map {
+  pointer-events: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
+#deckgl-overlay {
+  z-index: 2;
+  background: none;
+}
+
+#deck-map-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+#deck-container {
+  width: 100vw;
+  height: 100vh;
+}
+    </style>
+  </head>
+  <body>
+    <div id="deck-container">
+    </div>
+  </body>
+  <script>
+    const jsonInput = {"initialViewState": {"bearing": -27.36, "latitude": 35.1175, "longitude": -89.971107, "maxZoom": 15, "minZoom": 5, "pitch": 40.5, "zoom": 7}, "layers": [{"@@type": "HexagonLayer", "autoHighlight": true, "coverage": 1, "data": [{"# of stops": 2, "% of distance covered": 57.32104578, "% of distance covered by stop 1": "37.19% - 277 miles", "% of distance covered by stop 2": "57.32% - 417 miles", "% of journey covered": 57.32104578, "Red Zone ?": "No", "Time in stop 1": 40, "Time in stop 2": 20, "distance": 417.8704237, "lat": 34.7861337, "lon": -92.12764, "miles remaining after stop 2": "312 miles", "miles remaining to dest after stop 1": "452 miles", "name": "11801 I 40 Fwy, North Little Rock, AR 72117", "racks": 6, "shipment_id": "sensitech-AD94320", "spaces": 6, "stop_id": 6, "time spent": 19.93333333}, {"# of stops": 2, "% of distance covered": 37.18826024, "% of distance covered by stop 1": "37.19% - 277 miles", "% of distance covered by stop 2": "57.32% - 417 miles", "% of journey covered": 37.18826024, "Red Zone ?": "No", "Time in stop 1": 40, "Time in stop 2": 20, "distance": 271.1024172, "lat": 35.3903866, "lon": -89.4129913, "miles remaining after stop 2": "312 miles", "miles remaining to dest after stop 1": "452 miles", "name": "7720 TN-222, Stanton, TN 38069", "racks": 7, "shipment_id": "sensitech-AD94320", "spaces": 7, "stop_id": 7, "time spent": 39.8}, {"# of stops": 2, "% of distance covered": 23.09581223, "% of distance covered by stop 1": "23.1% - 167 miles", "% of distance covered by stop 2": "42.87% - 312 miles", "% of journey covered": 23.09581223, "Red Zone ?": "No", "Time in stop 1": 17, "Time in stop 2": 38, "distance": 168.3684712, "lat": 35.9919004, "lon": -87.4890382, "miles remaining after stop 2": "417 miles", "miles remaining to dest after stop 1": "562 miles", "name": "2971 State Hwy 48 S, Dickson, TN 37055", "racks": 2, "shipment_id": "sensitech-AE15050", "spaces": 2, "stop_id": 2, "time spent": 17.63333333}, {"# of stops": 2, "% of distance covered": 42.87367064, "% of distance covered by stop 1": "23.1% - 167 miles", "% of distance covered by stop 2": "42.87% - 312 miles", "% of journey covered": 42.87367064, "Red Zone ?": "No", "Time in stop 1": 17, "Time in stop 2": 38, "distance": 312.549059, "lat": 35.1568874, "lon": -90.1411843, "miles remaining after stop 2": "417 miles", "miles remaining to dest after stop 1": "562 miles", "name": "1100 Martin Luther King Jr Dr #6, West Memphis, AR 72301", "racks": 22, "shipment_id": "sensitech-AE15050", "spaces": 22, "stop_id": 22, "time spent": 38.96666667}, {"# of stops": 2, "% of distance covered": 66.59004466, "% of distance covered by stop 1": "20.78% - 145 miles", "% of distance covered by stop 2": "66.69% - 486 miles", "% of journey covered": 66.59004466, "Red Zone ?": "Yes", "Time in stop 1": 20, "Time in stop 2": 38, "distance": 485.4414256, "lat": 34.1869041, "lon": -93.0706564, "miles remaining after stop 2": "243 miles", "miles remaining to dest after stop 1": "584 miles", "name": "170 Valley St, Caddo Valley, AR 71923", "racks": 9, "shipment_id": "sensitech-AE25834", "spaces": 9, "stop_id": 9, "time spent": 38.81666667}, {"# of stops": 2, "% of distance covered": 48.51242688, "% of distance covered by stop 1": "25.35% - 174 miles", "% of distance covered by stop 2": "48.51% - 353 miles", "% of journey covered": 48.51242688, "Red Zone ?": "No", "Time in stop 1": 40, "Time in stop 2": 37, "distance": 353.655592, "lat": 34.9866579, "lon": -90.9075093, "miles remaining after stop 2": "376 miles", "miles remaining to dest after stop 1": "555 miles", "name": "1010 N Main St, Palestine, AR 72372", "racks": 4, "shipment_id": "sensitech-AE25841", "spaces": 4, "stop_id": 4, "time spent": 37.68333333}, {"# of stops": 2, "% of distance covered": 31.57795056, "% of distance covered by stop 1": "31.58% - 230 miles", "% of distance covered by stop 2": "42.87% - 312 miles", "% of journey covered": 31.57795056, "Red Zone ?": "No", "Time in stop 1": 25, "Time in stop 2": 35, "distance": 230.2032596, "lat": 35.6792344, "lon": -88.7446349, "miles remaining after stop 2": "417 miles", "miles remaining to dest after stop 1": "499 miles", "name": "2050 Hwy 70 E, Jackson, TN 38305", "racks": 5, "shipment_id": "sensitech-AE4081", "spaces": 5, "stop_id": 5, "time spent": 24.91666667}, {"# of stops": 2, "% of distance covered": 42.87367064, "% of distance covered by stop 1": "31.58% - 230 miles", "% of distance covered by stop 2": "42.87% - 312 miles", "% of journey covered": 42.87367064, "Red Zone ?": "No", "Time in stop 1": 25, "Time in stop 2": 35, "distance": 312.549059, "lat": 35.1568874, "lon": -90.1411843, "miles remaining after stop 2": "417 miles", "miles remaining to dest after stop 1": "499 miles", "name": "1100 Martin Luther King Jr Dr #6, West Memphis, AR 72301", "racks": 22, "shipment_id": "sensitech-AE4081", "spaces": 22, "stop_id": 22, "time spent": 35.16666667}, {"# of stops": 2, "% of distance covered": 42.87367064, "% of distance covered by stop 1": "25.35% - 182 miles", "% of distance covered by stop 2": "42.87% - 312 miles", "% of journey covered": 42.87367064, "Red Zone ?": "No", "Time in stop 1": 30, "Time in stop 2": 60, "distance": 312.549059, "lat": 35.1568874, "lon": -90.1411843, "miles remaining after stop 2": "417 miles", "miles remaining to dest after stop 1": "547 miles", "name": "1100 Martin Luther King Jr Dr #6, West Memphis, AR 72301", "racks": 22, "shipment_id": "sensitech-AE4088", "spaces": 22, "stop_id": 22, "time spent": 59.61666667}, {"# of stops": 2, "% of distance covered": 48.51242688, "% of distance covered by stop 1": "48.51% - 353 miles", "% of distance covered by stop 2": "66.59% - 485 miles", "% of journey covered": 48.51242688, "Red Zone ?": "Yes", "Time in stop 1": 30, "Time in stop 2": 60, "distance": 353.655592, "lat": 34.9866579, "lon": -90.9075093, "miles remaining after stop 2": "244 miles", "miles remaining to dest after stop 1": "376 miles", "name": "1010 N Main St, Palestine, AR 72372", "racks": 4, "shipment_id": "sensitech-AE50975", "spaces": 4, "stop_id": 4, "time spent": 29.46666667}, {"# of stops": 2, "% of distance covered": 66.59004466, "% of distance covered by stop 1": "48.51% - 353 miles", "% of distance covered by stop 2": "66.59% - 485 miles", "% of journey covered": 66.59004466, "Red Zone ?": "Yes", "Time in stop 1": 30, "Time in stop 2": 60, "distance": 485.4414256, "lat": 34.1869041, "lon": -93.0706564, "miles remaining after stop 2": "244 miles", "miles remaining to dest after stop 1": "376 miles", "name": "170 Valley St, Caddo Valley, AR 71923", "racks": 9, "shipment_id": "sensitech-AE50975", "spaces": 9, "stop_id": 9, "time spent": 59.53333333}, {"# of stops": 2, "% of distance covered": 23.09581223, "% of distance covered by stop 1": "23.1% - 167 miles", "% of distance covered by stop 2": "70.64% - 514 miles", "% of journey covered": 23.09581223, "Red Zone ?": "No", "Time in stop 1": 21, "Time in stop 2": 60, "distance": 168.3684712, "lat": 35.9919004, "lon": -87.4890382, "miles remaining after stop 2": "215 miles", "miles remaining to dest after stop 1": "562 miles", "name": "2971 State Hwy 48 S, Dickson, TN 37055", "racks": 2, "shipment_id": "sensitech-AE57688", "spaces": 2, "stop_id": 2, "time spent": 21.4}, {"# of stops": 2, "% of distance covered": 70.63977078, "% of distance covered by stop 1": "23.1% - 167 miles", "% of distance covered by stop 2": "70.64% - 514 miles", "% of journey covered": 70.63977078, "Red Zone ?": "No", "Time in stop 1": 21, "Time in stop 2": 60, "distance": 514.963929, "lat": 33.82885, "lon": -93.3970257, "miles remaining after stop 2": "215 miles", "miles remaining to dest after stop 1": "562 miles", "name": "116 Ron Herrod Rd, Prescott, AR 71857", "racks": 8, "shipment_id": "sensitech-AE57688", "spaces": 8, "stop_id": 8, "time spent": 60.23333333}, {"# of stops": 2, "% of distance covered": 42.87367064, "% of distance covered by stop 1": "25.35% - 174 miles", "% of distance covered by stop 2": "42.87% - 312 miles", "% of journey covered": 42.87367064, "Red Zone ?": "No", "Time in stop 1": 22, "Time in stop 2": 52, "distance": 312.549059, "lat": 35.1568874, "lon": -90.1411843, "miles remaining after stop 2": "417 miles", "miles remaining to dest after stop 1": "555 miles", "name": "1100 Martin Luther King Jr Dr #6, West Memphis, AR 72301", "racks": 22, "shipment_id": "sensitech-AE7550", "spaces": 22, "stop_id": 22, "time spent": 52.65}, {"# of stops": 2, "% of distance covered": 25.35099475, "% of distance covered by stop 1": "25.35% - 174 miles", "% of distance covered by stop 2": "42.87% - 312 miles", "% of journey covered": 25.35099475, "Red Zone ?": "No", "Time in stop 1": 22, "Time in stop 2": 52, "distance": 184.8087517, "lat": 35.8823776, "lon": -87.8039662, "miles remaining after stop 2": "417 miles", "miles remaining to dest after stop 1": "555 miles", "name": "15561 TN-13 S, Hurricane Mills, TN 37078", "racks": 26, "shipment_id": "sensitech-AE7550", "spaces": 26, "stop_id": 26, "time spent": 22.33333333}], "elevationRange": [0, 500], "elevationScale": 150, "extruded": true, "getPosition": "@@=[lon, lat]", "id": "50bb5463-ff21-44e6-82e7-f6fd751e3a1f", "pickable": true, "radius": 4600}], "mapProvider": "carto", "mapStyle": "mapbox://styles/mapbox/light-v9", "mapboxKey": "", "views": [{"@@type": "MapView", "controller": true}]};
+    const tooltip = {'html': '<b>Shipments Count:</b> {elevationValue}', 'style': {'color': 'white'}};
+    const customLibraries = null;
+
+    const deckInstance = createDeck({
+                  container: document.getElementById('deck-container'),
+      jsonInput,
+      tooltip,
+      customLibraries
+    });
+
+  </script>
+</html>

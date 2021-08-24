@@ -1,0 +1,5 @@
+﻿shipment_id,time spent,max,min,% of distance covered,stop_id,address,name,type,lat,lon,distance,% of journey covered
+sensitech-AE29315,20.13333333,20.1,20.1,71.65757799,23,"9935 State Rte 41, Jeffersonville, OH 43128","Flying J Travel Plaza, Jeffersonville, OH ","Food, Fuel, Truck Care",39.64628,-83.54089,164.0958536,71.65757799
+sensitech-AE66518,110.9166667,110.9,110.9,28.2723284,8,"976 Hwy 1039, Sparta, KY 41083","Love's Travel Stop, Sparta, KY","Gas station, Truck repair, Food/ Convenience store",38.693662,-84.940909,64.74363203,28.2723284
+sensitech-AE66528,28.56666667,28.6,28.6,69.8837315,3,"13023 US-35, Jeffersonville, OH 43128","Love's Travel Stop, Jeffersonville, OH ","Gas station, Truck repair, Food/ Convenience store",39.620771,-83.614956,160.0337451,69.8837315
+sensitech-AE68591,39.38333333,39.4,39.4,69.8837315,3,"13023 US-35, Jeffersonville, OH 43128","Love's Travel Stop, Jeffersonville, OH ","Gas station, Truck repair, Food/ Convenience store",39.620771,-83.614956,160.0337451,69.8837315

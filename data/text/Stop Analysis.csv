@@ -1,0 +1,5 @@
+﻿Lane,Total shipments,Avg Google ETA,Avg transit time,Unique stop locations,# of shipments that had a stop,# shipments >1 stop,Avg. time spent at stop (min),Days of the week,Time window of the day when stops happen
+KDC To Cardinal-Groveport,177,3hr and 46mins,*4hr and 18mins,3,4 (2.2 %),0,29,"Friday (2), Wednesday (2)","11AM - 1 PM, 9 PM - 11 PM"
+KDC to McKesson-OliveBranch,190,6hr and 28mins,6hr and 48min,9,67 (35 %),4,"32 (1 stop), 29 (2 stop)",Tuesday and Friday,10AM - 1 PM [66%] and (4-6) AM [17%]
+KDC to ABC-LockBourne,135,3hr and 42min,-,-,-,0,-,-,-
+KDC to MorrisDickson-Shreveport,37,11hr and 15mins,13hr and 45min,11,31 (83 %),9,"38 (1 stop), 35 (2 stop)",Tuesday and Thursday,11 PM -2 AM and (9-10) PM

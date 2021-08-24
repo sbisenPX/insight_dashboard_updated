@@ -1,0 +1,11 @@
+streamlit 
+altair
+pandas
+datetime
+numpy
+folium
+plotly
+streamlit_folium
+joblib
+scipy
+sklearn

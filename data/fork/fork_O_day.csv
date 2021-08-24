@@ -1,0 +1,13 @@
+weekday,Count,Route
+Friday,24,Bypass
+Tuesday,20,Bypass
+Monday,5,Bypass
+Wednesday,3,Bypass
+Sunday,2,Bypass
+Thursday,1,Bypass
+Friday,60,City
+Tuesday,60,City
+Thursday,6,City
+Wednesday,5,City
+Monday,3,City
+Saturday,1,City
